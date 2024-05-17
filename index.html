@@ -6,7 +6,34 @@
     <title>Space Defender</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
-<body> 
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas" width="800" height="600"></canvas>
+        <div class="game-ui">
+            <div>Score: <span id="score">0</span></div>
+            <div>Level: <span id="level">1</span></div>
+            <div>Lives: <span id="lives">3</span></div>
+        </div>
+        <div class="power-up">
+            <div>Power-up: <span id="power-up-type">None</span></div>
+            <div>Time: <span id="power-up-time">0</span>s</div>
+        </div>
+        <div class="start-screen" id="start-screen">
+            <h1>SPACE DEFENDER</h1>
+            <p>Use arrow keys or WASD to move</p>
+            <p>Space to shoot</p>
+            <p>Collect power-ups to enhance your ship</p>
+            <button id="start-button">START GAME</button>
+        </div>
+        <div class="game-over" id="game-over">
+            <h2>GAME OVER</h2>
+            <p>Your score: <span id="final-score">0</span></p>
+            <button id="restart-button">PLAY AGAIN</button>
+        </div>
+        <div class="level-notification" id="level-notification">
+            Level <span id="new-level">2</span>
+        </div>
+    </div>
     <script type="text/javascript" src="scripts.js"></script>
 </body>
 </html>
