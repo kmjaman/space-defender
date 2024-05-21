@@ -14,3 +14,26 @@ let level = 1;
 let lives = 3;
 let powerUpType = "None";
 let powerUpTime = 0;
+
+// Game objects
+const player = {
+    x: canvas.width / 2,
+    y: canvas.height - 50,
+    width: 40,
+    height: 40,
+    speed: 5,
+    color: '#6c5ce7',
+    bullets: [],
+    bulletSpeed: 7,
+    bulletCooldown: 20,
+    bulletTimer: 0,
+    powerUp: null,
+    powerUpDuration: 0
+};
+
+const enemies = [];
+const enemyBullets = [];
+const particles = [];
+const powerUps = [];
+
+const keys = {};
