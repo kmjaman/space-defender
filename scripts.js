@@ -37,3 +37,15 @@ const particles = [];
 const powerUps = [];
 
 const keys = {};
+
+// Event listeners
+window.addEventListener('keydown', (e) => {
+    keys[e.key] = true;
+});
+
+window.addEventListener('keyup', (e) => {
+    keys[e.key] = false;
+});
+
+startButton.addEventListener('click', startGame);
+restartButton.addEventListener('click', restartGame);
