@@ -49,3 +49,31 @@ window.addEventListener('keyup', (e) => {
 
 startButton.addEventListener('click', startGame);
 restartButton.addEventListener('click', restartGame);
+
+// Game functions
+function startGame() {
+    startScreen.style.display = 'none';
+    gameRunning = true;
+    gameOver = false;
+    score = 0;
+    level = 1;
+    lives = 3;
+    enemies.length = 0;
+    player.bullets.length = 0;
+    enemyBullets.length = 0;
+    particles.length = 0;
+    powerUps.length = 0;
+    player.x = canvas.width / 2;
+    player.y = canvas.height - 50;
+    player.powerUp = null;
+    player.powerUpDuration = 0;
+    
+    spawnEnemies();
+    gameLoop();
+    updateUI();
+}
+
+function restartGame() {
+    gameOverScreen.style.display = 'none';
+    startGame();
+}
