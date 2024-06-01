@@ -77,3 +77,12 @@ function restartGame() {
     gameOverScreen.style.display = 'none';
     startGame();
 }
+
+function updateUI() {
+    document.getElementById('score').textContent = score;
+    document.getElementById('level').textContent = level;
+    document.getElementById('lives').textContent = lives;
+    document.getElementById('final-score').textContent = score;
+    document.getElementById('power-up-type').textContent = powerUpType;
+    document.getElementById('power-up-time').textContent = Math.ceil(powerUpTime / 60);
+}
