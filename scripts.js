@@ -86,3 +86,11 @@ function updateUI() {
     document.getElementById('power-up-type').textContent = powerUpType;
     document.getElementById('power-up-time').textContent = Math.ceil(powerUpTime / 60);
 }
+
+function showLevelNotification() {
+    document.getElementById('new-level').textContent = level;
+    levelNotification.style.display = 'block';
+    setTimeout(() => {
+        levelNotification.style.display = 'none';
+    }, 2000);
+}
