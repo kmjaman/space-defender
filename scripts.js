@@ -94,3 +94,9 @@ function showLevelNotification() {
         levelNotification.style.display = 'none';
     }, 2000);
 }
+
+function endGame() {
+    gameRunning = false;
+    gameOver = true;
+    gameOverScreen.style.display = 'block';
+}
