@@ -100,3 +100,24 @@ function endGame() {
     gameOver = true;
     gameOverScreen.style.display = 'block';
 }
+
+function spawnEnemies() {
+    const rows = Math.min(3 + Math.floor(level / 2), 6);
+    const cols = Math.min(6 + Math.floor(level / 3), 10);
+    
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            enemies.push({
+                x: 70 + j * 60,
+                y: 50 + i * 50,
+                width: 40,
+                height: 40,
+                speed: 1 + level * 0.3,
+                moveDirection: 1,
+                color: i === 0 ? '#eb4d4b' : (i === 1 ? '#ff7979' : '#badc58'),
+                health: i === 0 ? 3 : (i === 1 ? 2 : 1),
+                shootChance: 0.001 + (level * 0.0005)
+            });
+        }
+    }
+}
