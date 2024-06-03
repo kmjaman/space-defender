@@ -121,3 +121,24 @@ function spawnEnemies() {
         }
     }
 }
+
+function spawnPowerUp() {
+    if (Math.random() < 0.005) {
+        const types = ['rapidFire', 'shield', 'multiShot', 'bomb'];
+        const type = types[Math.floor(Math.random() * types.length)];
+        
+        powerUps.push({
+            x: Math.random() * (canvas.width - 30),
+            y: 0,
+            width: 30,
+            height: 30,
+            speed: 2,
+            type: type,
+            color: type === 'rapidFire' ? '#f39c12' : 
+                   type === 'shield' ? '#3498db' : 
+                   type === 'multiShot' ? '#9b59b6' : 
+                   '#e74c3c'
+        });
+    }
+}
+
