@@ -156,5 +156,36 @@ function movePlayer() {
     if ((keys['ArrowDown'] || keys['s']) && player.y < canvas.height - player.height) {
         player.y += player.speed;
     }
+
+    // Shooting
+    if (keys[' '] && player.bulletTimer <= 0) {
+        if (player.powerUp === 'multiShot') {
+            // Triple shot
+            player.bullets.push({
+                x: player.x + player.width / 2 - 2,
+                y: player.y,
+                width: 4,
+                height: 10,
+                speed: player.bulletSpeed,
+                color: '#fff'
+            });
+            player.bullets.push({
+                x: player.x + player.width / 2 - 2 - 10,
+                y: player.y + 10,
+                width: 4,
+                height: 10,
+                speed: player.bulletSpeed,
+                color: '#fff'
+            });
+            player.bullets.push({
+                x: player.x + player.width / 2 - 2 + 10,
+                y: player.y + 10,
+                width: 4,
+                height: 10,
+                speed: player.bulletSpeed,
+                color: '#fff'
+            });
+        }
+    }
 }
 
