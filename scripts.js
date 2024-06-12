@@ -185,6 +185,16 @@ function movePlayer() {
                 speed: player.bulletSpeed,
                 color: '#fff'
             });
+        } else {
+            // Standard shot
+            player.bullets.push({
+                x: player.x + player.width / 2 - 2,
+                y: player.y,
+                width: 4,
+                height: 10,
+                speed: player.bulletSpeed,
+                color: '#fff'
+            });
         }
     }
 }
