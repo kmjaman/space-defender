@@ -142,3 +142,19 @@ function spawnPowerUp() {
     }
 }
 
+function movePlayer() {
+    // Move with arrow keys or WASD
+    if ((keys['ArrowLeft'] || keys['a']) && player.x > 0) {
+        player.x -= player.speed;
+    }
+    if ((keys['ArrowRight'] || keys['d']) && player.x < canvas.width - player.width) {
+        player.x += player.speed;
+    }
+    if ((keys['ArrowUp'] || keys['w']) && player.y > 0) {
+        player.y -= player.speed;
+    }
+    if ((keys['ArrowDown'] || keys['s']) && player.y < canvas.height - player.height) {
+        player.y += player.speed;
+    }
+}
+
