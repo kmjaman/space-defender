@@ -196,6 +196,15 @@ function movePlayer() {
                 color: '#fff'
             });
         }
+
+        player.bulletTimer = player.powerUp === 'rapidFire' ? 
+                                    player.bulletCooldown / 3 : 
+                                    player.bulletCooldown;
+            }
+            
+            if (player.bulletTimer > 0) {
+                player.bulletTimer--;
+            }
     }
-}
+
 
