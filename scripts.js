@@ -217,4 +217,13 @@ function moveEnemies() {
             break;
         }
     }
+
+    // Move enemies
+    for (const enemy of enemies) {
+        if (hitEdge) {
+            enemy.moveDirection *= -1;
+            enemy.y += 20;
+        }
+        enemy.x += enemy.moveDirection * enemy.speed;
+    }
 }
