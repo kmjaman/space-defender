@@ -207,4 +207,14 @@ function movePlayer() {
             }
     }
 
-
+function moveEnemies() {
+    // Check if enemies need to change direction
+    let hitEdge = false;
+    for (const enemy of enemies) {
+        if ((enemy.x <= 0 && enemy.moveDirection < 0) || 
+            (enemy.x + enemy.width >= canvas.width && enemy.moveDirection > 0)) {
+            hitEdge = true;
+            break;
+        }
+    }
+}
