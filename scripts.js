@@ -225,5 +225,17 @@ function moveEnemies() {
             enemy.y += 20;
         }
         enemy.x += enemy.moveDirection * enemy.speed;
+
+        // Enemy shooting
+        if (Math.random() < enemy.shootChance) {
+            enemyBullets.push({
+                x: enemy.x + enemy.width / 2 - 2,
+                y: enemy.y + enemy.height,
+                width: 4,
+                height: 10,
+                speed: 5,
+                color: '#eb4d4b'
+            });
+        }
     }
 }
