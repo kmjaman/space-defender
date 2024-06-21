@@ -245,3 +245,16 @@ function moveEnemies() {
         }
     }
 }
+
+function moveBullets() {
+    // Move player bullets
+    for (let i = player.bullets.length - 1; i >= 0; i--) {
+        const bullet = player.bullets[i];
+        bullet.y -= bullet.speed;
+        
+        // Remove bullets that are off-screen
+        if (bullet.y + bullet.height < 0) {
+            player.bullets.splice(i, 1);
+        }
+    }
+}
