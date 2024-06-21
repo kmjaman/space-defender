@@ -237,5 +237,11 @@ function moveEnemies() {
                 color: '#eb4d4b'
             });
         }
+
+        // Check if enemy reached the bottom
+        if (enemy.y + enemy.height > player.y) {
+            lives = 0;
+            endGame();
+        }
     }
 }
