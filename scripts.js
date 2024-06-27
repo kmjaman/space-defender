@@ -257,4 +257,15 @@ function moveBullets() {
             player.bullets.splice(i, 1);
         }
     }
+
+     // Move enemy bullets
+     for (let i = enemyBullets.length - 1; i >= 0; i--) {
+        const bullet = enemyBullets[i];
+        bullet.y += bullet.speed;
+        
+        // Remove bullets that are off-screen
+        if (bullet.y > canvas.height) {
+            enemyBullets.splice(i, 1);
+        }
+    }
 }
