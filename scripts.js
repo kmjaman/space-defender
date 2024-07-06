@@ -269,3 +269,12 @@ function moveBullets() {
         }
     }
 }
+
+function gameLoop() {
+    update();
+    draw();
+    
+    if (gameRunning) {
+        requestAnimationFrame(gameLoop);
+    }
+}
