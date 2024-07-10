@@ -278,6 +278,22 @@ function drawPlayer() {
     ctx.lineTo(player.x, player.y + player.height);
     ctx.closePath();
     ctx.fill();
+    
+    // Draw shield if active
+    if (player.powerUp === 'shield') {
+        ctx.strokeStyle = '#3498db';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.arc(player.x + player.width / 2, player.y + player.height / 2, player.width / 2 + 10, 0, Math.PI * 2);
+        ctx.stroke();
+        
+        ctx.globalAlpha = 0.2;
+        ctx.fillStyle = '#3498db';
+        ctx.beginPath();
+        ctx.arc(player.x + player.width / 2, player.y + player.height / 2, player.width / 2 + 10, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+    }
 }
 
 function draw() {
