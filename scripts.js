@@ -270,6 +270,16 @@ function moveBullets() {
     }
 }
 
+function drawPlayer() {
+    ctx.fillStyle = player.color;
+    ctx.beginPath();
+    ctx.moveTo(player.x + player.width / 2, player.y);
+    ctx.lineTo(player.x + player.width, player.y + player.height);
+    ctx.lineTo(player.x, player.y + player.height);
+    ctx.closePath();
+    ctx.fill();
+}
+
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
