@@ -270,6 +270,17 @@ function moveBullets() {
     }
 }
 
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    drawStars();
+    drawPowerUps();
+    drawBullets();
+    drawEnemies();
+    drawPlayer();
+    drawParticles();
+}
+
 function gameLoop() {
     update();
     draw();
