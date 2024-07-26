@@ -329,3 +329,9 @@ function gameLoop() {
         requestAnimationFrame(gameLoop);
     }
 }
+
+// Start the game when the page loads
+window.onload = function() {
+    // Game is waiting for player to press start
+    drawStars();
+};
