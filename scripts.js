@@ -296,6 +296,20 @@ function drawPlayer() {
     }
 }
 
+function update() {
+    if (!gameRunning) return;
+    
+    movePlayer();
+    moveEnemies();
+    moveBullets();
+    movePowerUps();
+    updateParticles();
+    updatePowerUpStatus();
+    checkCollisions();
+    spawnPowerUp();
+    updateUI();
+}
+
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
