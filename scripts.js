@@ -349,3 +349,12 @@ window.onload = function() {
     // Game is waiting for player to press start
     drawStars();
 };
+
+// Start the star animation
+(function animateStars() {
+    if (!gameRunning) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawStars();
+        requestAnimationFrame(animateStars);
+    }
+})();
