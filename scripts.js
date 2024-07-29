@@ -296,6 +296,20 @@ function drawPlayer() {
     }
 }
 
+function drawStars() {
+    // Draw star background
+    ctx.fillStyle = '#fff';
+    for (let i = 0; i < 100; i++) {
+        const x = Math.sin(i * 567 + Date.now() / 2000) * canvas.width / 2 + canvas.width / 2;
+        const y = Math.cos(i * 345 + Date.now() / 3000) * canvas.height / 2 + canvas.height / 2;
+        
+        const size = Math.sin(i * 789 + Date.now() / 1000) * 1.5 + 1.5;
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
 function update() {
     if (!gameRunning) return;
     
