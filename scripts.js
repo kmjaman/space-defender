@@ -296,6 +296,25 @@ function drawPlayer() {
     }
 }
 
+function drawEnemies() {
+    for (const enemy of enemies) {
+        ctx.fillStyle = enemy.color;
+        
+        // Draw different enemy shapes based on type
+        if (enemy.color === '#eb4d4b') { // Top row - boss enemy
+            // Draw boss enemy
+            ctx.beginPath();
+            ctx.moveTo(enemy.x + enemy.width / 2, enemy.y);
+            ctx.lineTo(enemy.x + enemy.width, enemy.y + enemy.height / 3);
+            ctx.lineTo(enemy.x + enemy.width, enemy.y + enemy.height);
+            ctx.lineTo(enemy.x, enemy.y + enemy.height);
+            ctx.lineTo(enemy.x, enemy.y + enemy.height / 3);
+            ctx.closePath();
+            ctx.fill();
+        }
+    }
+}
+
 function drawStars() {
     // Draw star background
     ctx.fillStyle = '#fff';
