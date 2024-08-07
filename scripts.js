@@ -311,6 +311,12 @@ function drawEnemies() {
             ctx.lineTo(enemy.x, enemy.y + enemy.height / 3);
             ctx.closePath();
             ctx.fill();
+
+            // Draw health bar
+            ctx.fillStyle = '#000';
+            ctx.fillRect(enemy.x, enemy.y - 10, enemy.width, 5);
+            ctx.fillStyle = '#2ecc71';
+            ctx.fillRect(enemy.x, enemy.y - 10, (enemy.health / 3) * enemy.width, 5);
         }
     }
 }
