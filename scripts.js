@@ -317,6 +317,21 @@ function drawEnemies() {
             ctx.fillRect(enemy.x, enemy.y - 10, enemy.width, 5);
             ctx.fillStyle = '#2ecc71';
             ctx.fillRect(enemy.x, enemy.y - 10, (enemy.health / 3) * enemy.width, 5);
+        } else if (enemy.color === '#ff7979') { // Middle row
+            // Draw standard enemy
+            ctx.beginPath();
+            ctx.moveTo(enemy.x + enemy.width / 2, enemy.y);
+            ctx.lineTo(enemy.x + enemy.width, enemy.y + enemy.height / 2);
+            ctx.lineTo(enemy.x + enemy.width / 2, enemy.y + enemy.height);
+            ctx.lineTo(enemy.x, enemy.y + enemy.height / 2);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Draw health bar
+            ctx.fillStyle = '#000';
+            ctx.fillRect(enemy.x, enemy.y - 10, enemy.width, 5);
+            ctx.fillStyle = '#2ecc71';
+            ctx.fillRect(enemy.x, enemy.y - 10, (enemy.health / 2) * enemy.width, 5);
         }
     }
 }
