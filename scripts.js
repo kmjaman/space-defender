@@ -332,6 +332,11 @@ function drawEnemies() {
             ctx.fillRect(enemy.x, enemy.y - 10, enemy.width, 5);
             ctx.fillStyle = '#2ecc71';
             ctx.fillRect(enemy.x, enemy.y - 10, (enemy.health / 2) * enemy.width, 5);
+        } else { // Bottom row
+            // Draw simple enemy
+            ctx.beginPath();
+            ctx.arc(enemy.x + enemy.width / 2, enemy.y + enemy.height / 2, enemy.width / 2, 0, Math.PI * 2);
+            ctx.fill();
         }
     }
 }
