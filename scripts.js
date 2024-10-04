@@ -347,6 +347,12 @@ function drawBullets() {
         ctx.fillStyle = bullet.color;
         ctx.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
     }
+
+    // Draw enemy bullets
+    for (const bullet of enemyBullets) {
+        ctx.fillStyle = bullet.color;
+        ctx.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
+    }
 }
 
 function drawStars() {
