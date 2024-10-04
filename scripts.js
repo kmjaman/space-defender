@@ -355,6 +355,17 @@ function drawBullets() {
     }
 }
 
+function drawParticles() {
+    for (const particle of particles) {
+        ctx.globalAlpha = particle.life / 30;
+        ctx.fillStyle = particle.color;
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+}
+
 function drawStars() {
     // Draw star background
     ctx.fillStyle = '#fff';
