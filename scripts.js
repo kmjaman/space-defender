@@ -372,6 +372,22 @@ function drawPowerUps() {
         ctx.beginPath();
         ctx.arc(powerUp.x + powerUp.width / 2, powerUp.y + powerUp.height / 2, powerUp.width / 2, 0, Math.PI * 2);
         ctx.fill();
+
+        // Draw power-up symbol
+        ctx.fillStyle = '#fff';
+        ctx.font = '20px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        
+        if (powerUp.type === 'rapidFire') {
+            ctx.fillText('F', powerUp.x + powerUp.width / 2, powerUp.y + powerUp.height / 2);
+        } else if (powerUp.type === 'shield') {
+            ctx.fillText('S', powerUp.x + powerUp.width / 2, powerUp.y + powerUp.height / 2);
+        } else if (powerUp.type === 'multiShot') {
+            ctx.fillText('M', powerUp.x + powerUp.width / 2, powerUp.y + powerUp.height / 2);
+        } else if (powerUp.type === 'bomb') {
+            ctx.fillText('B', powerUp.x + powerUp.width / 2, powerUp.y + powerUp.height / 2);
+        }
     }
 }
 
