@@ -366,6 +366,15 @@ function drawParticles() {
     ctx.globalAlpha = 1;
 }
 
+function drawPowerUps() {
+    for (const powerUp of powerUps) {
+        ctx.fillStyle = powerUp.color;
+        ctx.beginPath();
+        ctx.arc(powerUp.x + powerUp.width / 2, powerUp.y + powerUp.height / 2, powerUp.width / 2, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
 function drawStars() {
     // Draw star background
     ctx.fillStyle = '#fff';
