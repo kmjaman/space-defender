@@ -284,6 +284,19 @@ function createParticles(x, y, count, color) {
     }
 }
 
+function updateParticles() {
+    for (let i = particles.length - 1; i >= 0; i--) {
+        const particle = particles[i];
+        particle.x += particle.speedX;
+        particle.y += particle.speedY;
+        particle.life--;
+        
+        if (particle.life <= 0) {
+            particles.splice(i, 1);
+        }
+    }
+}
+
 function drawPlayer() {
     ctx.fillStyle = player.color;
     ctx.beginPath();
