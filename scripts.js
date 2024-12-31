@@ -270,6 +270,20 @@ function moveBullets() {
     }
 }
 
+function createParticles(x, y, count, color) {
+    for (let i = 0; i < count; i++) {
+        particles.push({
+            x: x,
+            y: y,
+            size: Math.random() * 3 + 1,
+            speedX: Math.random() * 6 - 3,
+            speedY: Math.random() * 6 - 3,
+            color: color,
+            life: 30
+        });
+    }
+}
+
 function drawPlayer() {
     ctx.fillStyle = player.color;
     ctx.beginPath();
