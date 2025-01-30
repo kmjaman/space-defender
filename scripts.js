@@ -270,6 +270,18 @@ function moveBullets() {
     }
 }
 
+function movePowerUps() {
+    for (let i = powerUps.length - 1; i >= 0; i--) {
+        const powerUp = powerUps[i];
+        powerUp.y += powerUp.speed;
+        
+        // Remove power-ups that are off-screen
+        if (powerUp.y > canvas.height) {
+            powerUps.splice(i, 1);
+        }
+    }
+}
+
 function createParticles(x, y, count, color) {
     for (let i = 0; i < count; i++) {
         particles.push({
