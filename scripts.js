@@ -282,6 +282,20 @@ function movePowerUps() {
     }
 }
 
+function updatePowerUpStatus() {
+    if (player.powerUp) {
+        player.powerUpDuration--;
+        powerUpTime = player.powerUpDuration;
+        
+        if (player.powerUpDuration <= 0) {
+            player.powerUp = null;
+            powerUpType = "None";
+        }
+    } else {
+        powerUpTime = 0;
+    }
+}
+
 function createParticles(x, y, count, color) {
     for (let i = 0; i < count; i++) {
         particles.push({
