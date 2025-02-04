@@ -325,6 +325,28 @@ function checkCollisions() {
             }
         }
     }
+
+    // Check enemy bullet collisions with player
+    if (player.powerUp !== 'shield') {
+        for (let i = enemyBullets.length - 1; i >= 0; i--) {
+            const bullet = enemyBullets[i];
+            
+            if (detectCollision(bullet, player)) {
+                // Bullet hit player
+                enemyBullets.splice(i, 1);
+                lives--;
+                
+                // Create hit particles
+                createParticles(player.x + player.width/2, player.y + player.height/2, 10, player.color);
+                
+                if (lives <= 0) {
+                    endGame();
+                }
+                
+                break;
+            }
+        }
+    }
 }
 
 function createParticles(x, y, count, color) {
