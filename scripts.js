@@ -296,6 +296,37 @@ function updatePowerUpStatus() {
     }
 }
 
+function checkCollisions() {
+    // Check player bullet collisions with enemies
+    for (let i = player.bullets.length - 1; i >= 0; i--) {
+        const bullet = player.bullets[i];
+        
+        for (let j = enemies.length - 1; j >= 0; j--) {
+            const enemy = enemies[j];
+            
+            if (detectCollision(bullet, enemy)) {
+                // Bullet hit enemy
+                player.bullets.splice(i, 1);
+                enemy.health--;
+                
+                // Create hit particles
+                createParticles(bullet.x, bullet.y, 5, enemy.color);
+                
+                if (enemy.health <= 0) {
+                    // Enemy destroyed
+                    enemies.splice(j, 1);
+                    score += 100 * (level * 0.5);
+                    
+                    // Create explosion particles
+                    createParticles(enemy.x + enemy.width/2, enemy.y + enemy.height/2, 20, enemy.color);
+                }
+                
+                break;
+            }
+        }
+    }
+}
+
 function createParticles(x, y, count, color) {
     for (let i = 0; i < count; i++) {
         particles.push({
