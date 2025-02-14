@@ -347,6 +347,22 @@ function checkCollisions() {
             }
         }
     }
+
+    // Check power-up collisions with player
+    for (let i = powerUps.length - 1; i >= 0; i--) {
+        const powerUp = powerUps[i];
+        
+        if (detectCollision(powerUp, player)) {
+            // Player got power-up
+            powerUps.splice(i, 1);
+            player.powerUp = powerUp.type;
+            player.powerUpDuration = 600; // 10 seconds
+            powerUpType = powerUp.type === 'rapidFire' ? 'Rapid Fire' : 
+                         powerUp.type === 'shield' ? 'Shield' : 
+                         powerUp.type === 'multiShot' ? 'Multi Shot' : 
+                         'Screen Bomb';
+        }
+    }
 }
 
 function createParticles(x, y, count, color) {
