@@ -377,6 +377,13 @@ function checkCollisions() {
             break;
         }
     }
+    
+    // Check if all enemies are defeated
+    if (enemies.length === 0) {
+        level++;
+        showLevelNotification();
+        spawnEnemies();
+    }
 }
 
 function createParticles(x, y, count, color) {
