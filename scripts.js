@@ -361,6 +361,20 @@ function checkCollisions() {
                          powerUp.type === 'shield' ? 'Shield' : 
                          powerUp.type === 'multiShot' ? 'Multi Shot' : 
                          'Screen Bomb';
+            // Activate screen bomb immediately
+            if (powerUp.type === 'bomb') {
+                for (let j = enemies.length - 1; j >= 0; j--) {
+                    const enemy = enemies[j];
+                    createParticles(enemy.x + enemy.width/2, enemy.y + enemy.height/2, 20, enemy.color);
+                    score += 50 * (level * 0.5);
+                }
+                enemies.length = 0;
+                enemyBullets.length = 0;
+                player.powerUp = null;
+                powerUpType = "None";
+            }
+            
+            break;
         }
     }
 }
